@@ -159,7 +159,7 @@ function loadbutton_Callback(hObject, eventdata, handles)
     if isequal(filename,0) || isequal(pathname,0)
         disp('No data loaded');
     else
-        filename=strcat(pathname,filename);
+        filename = strcat(pathname,filename);
         [dataIn, modulationTxt] = readOfdmDataIn(filename);
         handles.dataIn=dataIn;
         setModAndMultip(hObject, handles, parseModToNum(hObject, handles, modulationTxt));
@@ -181,8 +181,8 @@ function ofdmmodbutton_Callback(hObject, eventdata, handles)
     regrid = reshape(dataIn, gridsize);
     [dataOut, info] = lteOFDMModulate(enb,regrid);
     size(dataOut)
-
-    handles.dataOut=dataOut;
+    dataOut = double(half(dataOut));
+    handles.dataOut = dataOut;
     handles.info = info;
     guidata(hObject,handles);
     msgbox('Data modulated successfully! You can write result to file');
