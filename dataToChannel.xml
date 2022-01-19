@@ -1,20 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <struct>
-    <SamplingRate>1920000</SamplingRate>
-    <Nfft>128</Nfft>
+    <NDLRB>6</NDLRB>
+    <CellRefP>1</CellRefP>
+    <NCellID>0</NCellID>
+    <CyclicPrefix>Normal</CyclicPrefix>
     <Windowing>0</Windowing>
-    <CyclicPrefixLengths>10</CyclicPrefixLengths>
-    <CyclicPrefixLengths>9</CyclicPrefixLengths>
-    <CyclicPrefixLengths>9</CyclicPrefixLengths>
-    <CyclicPrefixLengths>9</CyclicPrefixLengths>
-    <CyclicPrefixLengths>9</CyclicPrefixLengths>
-    <CyclicPrefixLengths>9</CyclicPrefixLengths>
-    <CyclicPrefixLengths>9</CyclicPrefixLengths>
-    <CyclicPrefixLengths>10</CyclicPrefixLengths>
-    <CyclicPrefixLengths>9</CyclicPrefixLengths>
-    <CyclicPrefixLengths>9</CyclicPrefixLengths>
-    <CyclicPrefixLengths>9</CyclicPrefixLengths>
-    <CyclicPrefixLengths>9</CyclicPrefixLengths>
-    <CyclicPrefixLengths>9</CyclicPrefixLengths>
-    <CyclicPrefixLengths>9</CyclicPrefixLengths>
+    <DuplexMode>FDD</DuplexMode>
+    <NFTT>128</NFTT>
+    <SamplingRate>1920000</SamplingRate>
+    <CyclicPrefixLength>10</CyclicPrefixLength>
 </struct>

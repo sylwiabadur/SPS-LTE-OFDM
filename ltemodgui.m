@@ -53,8 +53,12 @@ function num = parseModToNum(hObject, handles, mod)
     disp(handles.modulationVar)
     guidata(hObject,handles)
 
-function writeWavePropToStruct(info)
-    writestruct(info, "dataToChannel.xml")
+function writeWavePropToStruct(handles)
+    propStruct = struct('NDLRB', handles.enb.NDLRB, 'CellRefP', handles.enb.CellRefP, ...
+        'NCellID', handles.enb.NCellID, 'CyclicPrefix', handles.enb.CyclicPrefix, 'Windowing', handles.enb.Windowing, ...
+        'DuplexMode', handles.enb.DuplexMode, 'NFTT', handles.info.Nfft, 'SamplingRate', handles.info.SamplingRate, ...
+        'CyclicPrefixLength', handles.info.CyclicPrefixLengths(1));
+    writestruct(propStruct, "dataToChannel.xml")
 
 function setModAndMultip(hObject, handles, modulation)
     if modulation == 1 %QPSK
@@ -193,9 +197,8 @@ function writebutton_Callback(hObject, eventdata, handles)
        return;
    end
    dataOut = handles.dataOut;
-   info = handles.info;
    writematrix(dataOut,'dataOutOfdm.txt');
-   writeWavePropToStruct(info)
+   writeWavePropToStruct(handles)
    msgbox('Data written to file dataOutOfdm.txt');
 
 
